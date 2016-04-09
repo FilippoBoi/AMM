@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Nerd-Help - Login</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Login al sito">
+        <meta name="author" content="Filippo Boi">
+        <meta name="keywords" content="Nerd-Help, Login">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--inserisco il foglio di stile CSS -->
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    </head>
+    <body>
+        <nav id="navigator">
+            <ul>
+                <li> <a href="descrizione.html"> info </a></li>
+                <li> <a href="cliente.html">Il mio profilo</a></li>
+                <li> <a href="venditore.html">Il mio negozio</a></li>
+            </ul>
+        </nav>
+        
+        <form action="segnaposto.asp" method="post">
+            <label for="username">username:</label>
+        <input type="text" name="username"
+               id="username" placeholder="nome utente" required/>
+        <br/>
+        <label for="pswd">password:</label>
+        <input type="password" name="password"
+               id="pswd" placeholder="inserisci password" required/>
+        <input type="submit" id="submit" value="Log in"/>
+        </form>
+    </body>
+</html>
