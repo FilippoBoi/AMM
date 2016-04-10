@@ -8,10 +8,13 @@ and open the template in the editor.
     Author     : Boi Filippo 47876
 */
 /*dichiaro le caratteristiche stilistiche generali del sito*/
+@media screen and (min-width:1024px)
+{
 body 
 {
     font-family: "Trebuchet MS", Arial, sans-serif;
     color: black;
+    float: right;
     background-color: #F0F7DA;    
 }
 
@@ -86,45 +89,99 @@ li
     display: inline;
     text-align: center;
 }
-/*vado a modificare gli stili di input*/ 
+/*vado a modificare gli stili di input sia per il login che per l'inserimento dei nuovi articoli*/ 
 input
 {
     font-family: "Times New Roman", Elvetica, sans-serif; 
     margin: 4px;
+    padding: 5px;
+}
+input:focus
+{
+    border: 2px solid grey;
+    background-color: lightyellow; 
 }
 
-input#pswd, input#submit
+input#submit
 {
-    position: relative;
-    left: 3px;
+    margin-top: 7%;
+    text-align: center;
+    height: 33%;
+    width: 66%;
+    font-size: 200%;
 }
 
 form
 {
    text-align: left;
    position: absolute;
-   left:40%;
-}
-input#NomeArticolo
-{
-    position: relative;
-    left: 9.75%;
+   left:45%;
 }
 
-input#linkImg
+
+/*imposto le caratteristiche per la tabella*/
+table, th, td
 {
-    position: relative;
-    left: 17%;
+    border-collapse: collapse;
+    border: 1px solid orange;
+    text-align: center;
 }
 
-input#prezzo
+tr#pari
 {
-    position: relative;
-    left: 0.75%;
+    background-color: #e5f2c0;
 }
 
-input#numeroArt, input#submit
+th
 {
-    position: relative;
-    left: 7%;
+    font-style: italic;
+    font-family: "Amaranth", Verdana, sans-serif;
+    background-color: #ddedab;
+    color:#1F192F;
+    height: 75px;
+}
+
+/*imposto le caratteristiche delle colonne e delle righe. nel file cliente.html sono stati aggiunti gli ID per evitare di andare a modificare tutte le tabelle
+ *che sono o che saranno presenti, limitando le modifiche alla sola interfaccia del cliente*/
+
+#descrizione
+{
+    width:50%;
+    text-align: left;
+}
+
+#immagine
+{
+    width: 6%;
+    height: 6%;
+}
+
+#price
+{
+    width: 5%;
+}
+
+#nomearticolo
+{
+    width: 5%;
+}
+
+#qta
+{
+    width: 4%;
+}
+
+#acquisto-car
+{
+    width: 10%;
+}
+    
+}
+
+@media screen and(max-width:480px)
+{
+div.secondary    
+{
+    display: none;
+}
 }
