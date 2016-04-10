@@ -178,10 +178,22 @@ th
     
 }
 
-@media screen and(max-width:480px)
+@media screen and (max-width:480px)
 {
-div.secondary    
+div.col1  
+{
+    width: 45%;
+}
+
+div.col2
+{
+    width: 45%;
+    background-color: white;
+    display: none;
+}
+#immagine
 {
     display: none;
+    
 }
 }
