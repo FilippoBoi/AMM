@@ -13,16 +13,17 @@ and open the template in the editor.
         <meta name="keywords" content="Carrello, articoli, vendita">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--inserisco il foglio di stile CSS -->
-        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <link rel="stylesheet" href="style.css" type="text/css" >
        </head>
     <body>
+    <header>
       <nav id="navigator">
             <ul>
                 <li> <a href="descrizione.html"> info </a></li>
                 <li> <a href="login.html">Login</a></li>
             </ul>
         </nav>
-        
+    </header>   
         <form action="venditore.html" method="post">
             <label for="NomeArticolo">Nome articolo:</label><br/>
             <input type="text" name="NomeArticolo" 
@@ -33,7 +34,7 @@ and open the template in the editor.
             <br/>
             <br/>
            <label for="descrizione">Descrizione Oggetto:</label><br/>
-           <textarea rows="4" cols="30" name="descrizione" id="descrizione"></textarea>
+           <textarea rows="4" cols="30" name="descrizione" id="descrizioneitm"></textarea>
            <br/>
            <label for="prezzo">prezzo dell'articolo:</label><br/>
            <input type="number" name="prezzo" id="prezzo" placeholder="00,00€" min="0.00" required/>
@@ -42,5 +43,6 @@ and open the template in the editor.
            <input type="number" name="numeroArt" id="numeroArt" placeholder="1" min="1.00" required/>
            <input type="submit" id="submit" value="Carica Prodotto"/>
         </form>
+        <footer></footer>
     </body>
 </html>
