@@ -9,25 +9,62 @@ package AMM_M3;
 public class OggettiInVendita
 {
     //dichiarazione delle categorie e delle variabili
-    String[] categoria = new String[5] ;
+    private String[] categoria = new String[] {"Libro", "Merchandise/oggettistica", "Film e Serie tv", "Giochi e Videogiochi", "periferiche"} ;
     
-    double prezzo;
-    int quantità;
-    String descrizioneBreve;
+    private double prezzo;
+    private int disponibilita; //numero di oggetti in vendita
+    private String descrizioneBreve;
     //ogni categoria dovrà avere un suo id specifico
-    
+    private Venditore venditore;
     
     //Costruttore OggettiInVendita
-    public OggettiInVendita(String tipo, int quantità, double prezzo, String descrizione)
+    public OggettiInVendita(String tipo, int disponibilita, double prezzo, String descrizione)
     {
-        this.quantità=quantità;
         this.prezzo=prezzo;
         this.descrizioneBreve=descrizione;
+        this.disponibilita=disponibilita;
         
-    categoria[0] = "Libri";
-    categoria[1] = "Merchandise/oggettistica";
-    categoria[2] = "Film e Serie tv";
-    categoria[3] = "Giochi e Videogiochi";
-    categoria[4] = "periferiche";
     }
+
+    public String[] getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String[] categoria) {
+        this.categoria = categoria;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public int getDisponibilita() {
+        return disponibilita;
+    }
+
+    public void setDisponibilita(int disponibilita) {
+        this.disponibilita = disponibilita;
+    }
+
+    public String getDescrizioneBreve() {
+        return descrizioneBreve;
+    }
+
+    public void setDescrizioneBreve(String descrizioneBreve) {
+        this.descrizioneBreve = descrizioneBreve;
+    }
+
+    public Venditore getVenditore() {
+        return venditore;
+    }
+
+    public void setVenditore(Venditore venditore) {
+        this.venditore = venditore;
+    }
+    
+    
 }

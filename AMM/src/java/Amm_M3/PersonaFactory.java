@@ -9,13 +9,6 @@ package Amm_M3;
  *
  * @author Macinino
  */
-public class Acquirente extends Persona{
+public class PersonaFactory {
     
-
-    
-    public Acquirente(String nome, String password, String mail)
-    {
-       super(nome, password, mail, nome);
-       
-    }
 }

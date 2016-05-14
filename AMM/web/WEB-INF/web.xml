@@ -8,10 +8,10 @@
     <servlet>
         <servlet-name>log-in</servlet-name>
         <servlet-class>Amm_M3.LoginServlet</servlet-class>
-        <servlet-path>Amm_M3.LoginServlet</servlet-path>
+
     </servlet>
     <servlet-mapping>
         <servlet-name>log-in</servlet-name>
-        <url-pattern>login.html</url-pattern>
+        <url-pattern>/login.html</url-pattern>
     </servlet-mapping>
 </web-app>

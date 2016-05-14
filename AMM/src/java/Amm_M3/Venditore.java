@@ -5,25 +5,39 @@
  */
 
 package Amm_M3;
- 
 
 /**
  *
  * @author Macinino
  */
-public class Venditore{
+public class Venditore extends Persona{
     
-    int id=000000;
-    String nome;
-    protected String password;
-    protected String mail;
+    String usernameV;
+    private double saldoVenditore=0.00;
     
-    public Venditore (int id, String nome, String password, String mail)
+    public Venditore (int id, String nome, String password, String mail, 
+            double saldoVenditore)
     {
-        this.nome=nome;
-        this.password=password;
-        this.mail=mail;
-        id++;
+        super(nome, password, mail, nome);
+        
+        this.saldoVenditore=saldoVenditore;
+        
     }
-		
+
+    public String getUsernameV() {
+        return usernameV;
+    }
+
+    public void setUsernameV(String usernameV) {
+        this.usernameV = usernameV;
+    }
+
+    public double getSaldoVenditore() {
+        return saldoVenditore;
+    }
+
+    public void setSaldoVenditore(double saldoVenditore) {
+        this.saldoVenditore = saldoVenditore;
+    }
+    
 }

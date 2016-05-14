@@ -11,19 +11,51 @@ package Amm_M3;
  */
 public class Bilancio {
     
-    int saldoid;
-    int uscite;
-    int entrata;
+    private double valoreRicaricato;
+    private double uscita;
+    private double entrata;
     
-    public int Ricarica(int a, String id)
+    public double Ricarica(double valoreRicaricato, double saldoAcquirente, String acquirente)
     {
-        if(/*se id è non nullo*/ id != null /*seconda condizione, id con login riuscito*/)
+        if(/*se id è non nullo*/ acquirente != null /*seconda condizione, id con login riuscito*/)
         {
-            saldoid=+a;
-            return saldoid;
+            saldoAcquirente=+valoreRicaricato;
+            return saldoAcquirente;
         } 
         else //se l'utente non ha effettuato il login o id è nullo, non esegue la ricarica del saldo
-            return saldoid;
+            return saldoAcquirente;
     }
+
+    public double getValoreRicaricato() {
+        return valoreRicaricato;
+    }
+
+    public void setValoreRicaricato(double valoreRicaricato) {
+        this.valoreRicaricato = valoreRicaricato;
+    }
+
+    public double getUscita() {
+        return uscita;
+    }
+
+    public void setUscita(double uscita) {
+        this.uscita = uscita;
+    }
+
+    public double getEntrata() {
+        return entrata;
+    }
+
+    public void setEntrata(double entrata) {
+        this.entrata = entrata;
+    }
+
+    public Bilancio(double valoreRicaricato, double uscita, double entrata) {
+        this.valoreRicaricato = valoreRicaricato;
+        this.uscita = uscita;
+        this.entrata = entrata;
+    }
+    
+    
     
 }
