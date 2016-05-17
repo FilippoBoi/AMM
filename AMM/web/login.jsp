@@ -15,7 +15,7 @@
         <meta name="keywords" content="Nerd-Help, Login">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--inserisco il foglio di stile CSS -->
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="M2/style.css" type="text/css">
     </head>
     <body>
         <header>
@@ -27,7 +27,12 @@
             </ul>
         </nav>
         </header>
-        <form action="segnaposto.asp" method="post">
+        
+        <div>
+        <%= request.getAttribute("message") %>
+        </div>
+        
+        <form action="login.html" method="post">
             <label for="username">username:</label><br/>
         <input type="text" name="username"
                id="username" placeholder="nome utente" required/>

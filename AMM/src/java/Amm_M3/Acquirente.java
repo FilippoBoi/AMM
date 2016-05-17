@@ -11,8 +11,6 @@ package Amm_M3;
  */
 public class Acquirente extends Persona{
     
-
-    
     public Acquirente(String nome, String password, String mail)
     {
        super(nome, password, mail, nome);

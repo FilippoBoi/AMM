@@ -11,4 +11,13 @@ package Amm_M3;
  */
 public class PersonaFactory {
     
+    public static boolean isVenditore(String username)
+    {
+        return false;
+    }
+    
+    public static boolean exists()
+    {
+        return false;
+    }
 }

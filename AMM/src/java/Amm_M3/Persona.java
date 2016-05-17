@@ -71,7 +71,7 @@ public class Persona {
         this.password = password;
         this.mail = mail;
         this.username = username;
-        saldo= new Bilancio(0, 0, 0);
+        saldo= new Bilancio(0.00, 0.00, 0.00, 0.00);
     }
  
     

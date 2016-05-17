@@ -5,6 +5,8 @@
  */
 package Amm_M3;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Macinino
@@ -14,12 +16,13 @@ public class Bilancio {
     private double valoreRicaricato;
     private double uscita;
     private double entrata;
+    private double saldo;
     
-    public double Ricarica(double valoreRicaricato, double saldoAcquirente, String acquirente)
+    public double Ricarica(double valoreRicaricato, double saldoAcquirente)
     {
-        if(/*se id è non nullo*/ acquirente != null /*seconda condizione, id con login riuscito*/)
+        if(valoreRicaricato>0)
         {
-            saldoAcquirente=+valoreRicaricato;
+            saldoAcquirente=saldoAcquirente+valoreRicaricato;
             return saldoAcquirente;
         } 
         else //se l'utente non ha effettuato il login o id è nullo, non esegue la ricarica del saldo
@@ -50,12 +53,23 @@ public class Bilancio {
         this.entrata = entrata;
     }
 
-    public Bilancio(double valoreRicaricato, double uscita, double entrata) {
+    public Bilancio(double valoreRicaricato, double uscita, double entrata, double saldo) {
         this.valoreRicaricato = valoreRicaricato;
         this.uscita = uscita;
         this.entrata = entrata;
     }
     
-    
-    
+    public double aggiornaconto(Ordine fattura, double saldoUser, String username)
+    {
+       Bilancio supporto=fattura.getTotale();
+       if(PersonaFactory.isVenditore(username))
+       {
+           saldoUser=saldoUser-supporto.saldo;
+        }
+       else
+       {
+           saldoUser=saldoUser+supporto.saldo;
+       }
+        return saldoUser;
+    }
 }
