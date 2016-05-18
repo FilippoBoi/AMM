@@ -4,6 +4,7 @@
     Author     : Macinino
 --%>
 
+<%@page import="Amm_M3.PersonaFactory"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,7 +22,7 @@
         <header>
         <nav id="navigator">
             <ul>
-                <li> <a href="descrizione.html"> info </a></li>
+                <li> <a href="index.html"> info </a></li>
                 <li> <a href="cliente.html">Il mio profilo</a></li>
                 <li> <a href="venditore.html">Il mio negozio</a></li>
             </ul>
@@ -42,6 +43,7 @@
                id="pswd" placeholder="inserisci password" required/><br/>
         <input type="submit" id="submit" value="Log in"/>
         </form> <br/>
+   
         <footer></footer>
     </body>
 </html>

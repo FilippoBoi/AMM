@@ -13,11 +13,49 @@ public class PersonaFactory {
     
     public static boolean isVenditore(String username)
     {
-        return false;
+        if(username.equals("Venditore") || username.equals("TestAdmin"))
+        {
+            return true;
+        }
+        else
+            return false;
     }
     
-    public static boolean exists()
+    public static boolean exists( String username)
     {
-        return false;
+        if(username.equals("TestUser") || username.equals("Cliente") || isVenditore(username))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    public static boolean itsPassword(String username, String password)
+    {
+        //codice provvisorio in attesa di database
+        if(username.equals("TestUser")&& password.equals("provapassword"))
+        {
+            return true;
+        }
+        
+        else if(username.equals("Cliente") && password.equals("000000"))
+        {
+            return true;
+        }
+        
+        else if (username.equals("TestAdmin") && password.equals("nopassword"))
+        {
+            return true;
+        }
+        
+        else if (username.equals("Venditore") && password.equals("passwordVendo"))
+        {
+            return true;
+        }
+        
+        else 
+        {
+            return false;
+        }
     }
 }

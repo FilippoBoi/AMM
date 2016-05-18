@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class OggettiFactory {
     
-    //restituisce tutti gli oggetti appartenenti ad una data categoria.
+    /*restituisce tutti gli oggetti appartenenti ad una data categoria.
     public ArrayList<OggettiInVendita> getOggettiCategoria(String category)
     {
         ArrayList<OggettiInVendita> oggettiFiltrati = new ArrayList<>();
@@ -22,5 +22,5 @@ public class OggettiFactory {
         
         return oggettiFiltrati;         
     }
-    
+    */
 }
