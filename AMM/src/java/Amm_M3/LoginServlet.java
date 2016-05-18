@@ -41,8 +41,8 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             String username;
             String nextLocation="login.jsp";
-            
             String message="Utente non loggato";
+            
             
             request.setAttribute("message", message);
             for( int i=0; i<cookies.length; i++)
@@ -100,13 +100,14 @@ public class LoginServlet extends HttpServlet {
         String username=request.getParameter("username");
         String password=request.getParameter("pswd");
         String nextLocation="/cliente.html";
-    
-
+        
         if(PersonaFactory.itsPassword(username, password))
         {
            if(PersonaFactory.isVenditore(username))
            {
-               response.sendRedirect("Venditore");
+               nextLocation="/venditore.html";
+               RequestDispatcher dispatcher = request.getRequestDispatcher(nextLocation);
+               dispatcher.forward(request, response);
            }
         }
         else
