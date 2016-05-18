@@ -43,7 +43,6 @@
                id="pswd" placeholder="inserisci password" required/><br/>
         <input type="submit" id="submit" value="Log in"/>
         </form> <br/>
-   
         <footer></footer>
     </body>
 </html>
