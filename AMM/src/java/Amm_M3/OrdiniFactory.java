@@ -11,5 +11,19 @@ package Amm_M3;
  */
 public class OrdiniFactory {
     
-
+    public void acquisto(Ordine daAcquistare, Bilancio acquirente)
+    {
+        double totale= Ordine.getTotale();
+        double saldoAcquirente= Persona.getSaldo();
+        if( saldoAcquirente<totale)
+        {
+            //messaggio di errore
+        }
+        else
+        {
+            saldoAcquirente-=totale;
+            //messaggio di avvenuto acquisto
+        }
+        
+    }
 }

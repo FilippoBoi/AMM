@@ -8,7 +8,7 @@ package Amm_M3;
 
 import java.util.ArrayList;
 
-public class OggettiInVendita
+public class OggettoInVendita
 {
     //dichiarazione delle categorie e delle variabili
     private String[] categoria = new String[] {"Libro", "Merchandise/oggettistica", "Film e Serie tv", "Giochi e Videogiochi", "periferiche"} ;
@@ -21,8 +21,10 @@ public class OggettiInVendita
     private Venditore venditore;
     private int idArticolo;
     
-    //Costruttore OggettiInVendita
-    public OggettiInVendita(String tipo, int disponibilita, double prezzo, String descrizione, int idArticolo)
+    private ArrayList<OggettoInVendita> tuttiGliOggetti= new ArrayList<>();
+    
+    //Costruttore OggettoInVendita
+    public OggettoInVendita(String tipo, int disponibilita, double prezzo, String descrizione, int idArticolo)
     {
         this.prezzo=prezzo;
         this.descrizioneBreve=descrizione;
@@ -94,4 +96,12 @@ public class OggettiInVendita
         }
         return oggettiCategoria;
     }*/
+
+    public ArrayList<OggettoInVendita> getTuttiGliOggetti() {
+        return tuttiGliOggetti;
+    }
+
+    public void setTuttiGliOggetti(ArrayList<OggettoInVendita> tuttiGliOggetti) {
+        this.tuttiGliOggetti = tuttiGliOggetti;
+    }
 }

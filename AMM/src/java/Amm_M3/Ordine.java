@@ -14,8 +14,17 @@ import java.util.ArrayList;
 public class Ordine {
 
     private Acquirente acquirente;
-    private ArrayList<OggettiInVendita> listaOggettiVenduti;
-    private Bilancio totale;
+    private ArrayList<OggettoInVendita> listaOggettiVenduti;
+    private double totale;
+    private Venditore venditore;
+
+    public Venditore getVenditore() {
+        return venditore;
+    }
+
+    public void setVenditore(Venditore venditore) {
+        this.venditore = venditore;
+    }
 
     public Acquirente getAcquirente() {
         return acquirente;
@@ -25,23 +34,23 @@ public class Ordine {
         this.acquirente = acquirente;
     }
 
-    public ArrayList<OggettiInVendita> getListaOggettiVenduti() {
+    public ArrayList<OggettoInVendita> getListaOggettiVenduti() {
         return listaOggettiVenduti;
     }
 
-    public void setListaOggettiVenduti(ArrayList<OggettiInVendita> listaOggettiVenduti) {
+    public void setListaOggettiVenduti(ArrayList<OggettoInVendita> listaOggettiVenduti) {
         this.listaOggettiVenduti = listaOggettiVenduti;
     }
 
-    public Bilancio getTotale() {
+    public double getTotale() {
         return totale;
     }
 
-    public void setTotale(Bilancio totale) {
+    public void setTotale(double totale) {
         this.totale = totale;
     }
 
-    public Ordine(Acquirente acquirente, ArrayList<OggettiInVendita> listaOggettiVenduti, Bilancio totale) {
+    public Ordine(Acquirente acquirente, ArrayList<OggettoInVendita> listaOggettiVenduti, double totale) {
         this.acquirente = acquirente;
         this.listaOggettiVenduti = listaOggettiVenduti;
         this.totale = totale;

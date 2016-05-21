@@ -3,6 +3,9 @@
     Created on : 18-mag-2016, 13.47.05
     Author     : Macinino
 --%>
+<%
+   //condizioni di reindirizzamento se non loggato
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,6 +20,7 @@
         <!--inserisco il foglio di stile CSS -->
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
+
     <body>
         <header>
         <nav id="navigator">
@@ -27,6 +31,10 @@
         </nav>
         </header>
         
+     <div>
+        <h1><%= request.getAttribute("message") %></h1>
+    </div>      
+    
         <table>
             <tr> 
             <th id="immagine">Immagine</th>

@@ -23,4 +23,19 @@ public class OggettiFactory {
         return oggettiFiltrati;         
     }
     */
+    
+    public ArrayList<OggettoInVendita> aggiuntaOggetto(OggettoInVendita nuovo)
+    {
+        ArrayList<OggettoInVendita> elencoOggetti = new ArrayList<>();
+        
+        //elencoOggetti=OggettoInVendita.getTuttiGliOggetti();
+        
+        elencoOggetti.add(nuovo);
+        return elencoOggetti;
+    }
+    
+    public boolean confermaAggiunta(OggettoInVendita aggiunto, ArrayList<OggettoInVendita> elenco)
+    {
+        return elenco.contains(aggiunto); //cookies per l'aggiunta dell'oggetto
+    }
 }

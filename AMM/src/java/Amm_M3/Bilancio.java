@@ -13,28 +13,16 @@ import java.util.ArrayList;
  */
 public class Bilancio {
     
-    private double valoreRicaricato;
     private double uscita;
     private double entrata;
     private double saldo;
-    
-    public double Ricarica(double valoreRicaricato, double saldoAcquirente)
-    {
-        if(valoreRicaricato>0)
-        {
-            saldoAcquirente=saldoAcquirente+valoreRicaricato;
-            return saldoAcquirente;
-        } 
-        else //se l'utente non ha effettuato il login o id è nullo, non esegue la ricarica del saldo
-            return saldoAcquirente;
+
+    public double getSaldo() {
+        return saldo;
     }
 
-    public double getValoreRicaricato() {
-        return valoreRicaricato;
-    }
-
-    public void setValoreRicaricato(double valoreRicaricato) {
-        this.valoreRicaricato = valoreRicaricato;
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     public double getUscita() {
@@ -53,23 +41,11 @@ public class Bilancio {
         this.entrata = entrata;
     }
 
-    public Bilancio(double valoreRicaricato, double uscita, double entrata, double saldo) {
-        this.valoreRicaricato = valoreRicaricato;
+    public Bilancio(double uscita, double entrata, double saldo) {
+
         this.uscita = uscita;
         this.entrata = entrata;
+        this.saldo = saldo;
     }
     
-    public double aggiornaconto(Ordine fattura, double saldoUser, String username)
-    {
-       Bilancio supporto=fattura.getTotale();
-       if(PersonaFactory.isVenditore(username))
-       {
-           saldoUser=saldoUser-supporto.saldo;
-        }
-       else
-       {
-           saldoUser=saldoUser+supporto.saldo;
-       }
-        return saldoUser;
-    }
 }
