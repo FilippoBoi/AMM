@@ -44,7 +44,7 @@ import java.util.logging.Logger;
     public ArrayList<Account> getContiList() {
         ArrayList<Account> listaConti = new ArrayList<>();
         
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "Paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
             java.sql.Statement stmt = conn.createStatement()) {
             String sql = "SELECT * FROM Account";
             ResultSet set = stmt.executeQuery(sql);
@@ -67,7 +67,7 @@ import java.util.logging.Logger;
         Account account = null;
         String sql = "SELECT * FROM Account WHERE id = ?";
         
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, id);
             ResultSet set = stmt.executeQuery();
