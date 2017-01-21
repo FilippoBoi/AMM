@@ -54,4 +54,4 @@ CREATE TABLE Oggetti
 
 --Insert--
 
-INSERT INTO Account values 0.00;
+INSERT INTO Account values 0.00, 500.0, 20.00, 12.00;
