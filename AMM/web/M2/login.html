@@ -13,29 +13,29 @@ and open the template in the editor.
         <meta name="keywords" content="Nerd-Help, Login">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--inserisco il foglio di stile CSS -->
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
     <body>
-        <header>
-        <nav id="navigator">
+        <nav>
             <ul>
                 <li> <a href="descrizione.html"> info </a></li>
                 <li> <a href="cliente.html">Il mio profilo</a></li>
                 <li> <a href="venditore.html">Il mio negozio</a></li>
             </ul>
         </nav>
-        </header>
-        <form action="login.html" method="post">
-            <label for="username">username:</label><br/>
+        
+        <div>
+            Inserisci le tue credenziali:<hr>
+        <form action="segnaposto.asp" method="post">
+            <label for="username">username:</label>
         <input type="text" name="username"
                id="username" placeholder="nome utente" required/>
         <br/>
-        <label for="pswd">password:</label><br/>
+        <label for="pswd">password:</label>
         <input type="password" name="password"
-               id="pswd" placeholder="inserisci password" required/><br/>
-        <input type="submit" id="submit" value="Log-in"/>
+               id="pswd" placeholder="inserisci password" required/>
+        <input type="submit" value="Log in"/>
         </form>
-        <br/>
-        <footer></footer>
+            </div>
     </body>
 </html>

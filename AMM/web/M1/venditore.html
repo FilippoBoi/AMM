@@ -20,7 +20,10 @@ and open the template in the editor.
                 <li> <a href="login.html">Login</a></li>
             </ul>
         </nav>
-        
+        <label>
+        Inserisci i dati dell'articolo da vendere:
+    </label>
+        <div>
         <form action="venditore.html" method="post">
             <label for="NomeArticolo">Nome articolo:</label>
             <input type="text" name="NomeArticolo" 
@@ -39,8 +42,30 @@ and open the template in the editor.
            <label for="numeroArt"> numero articoli:</label>
            <input type="number" name="numeroArt" id="numeroArt" placeholder="1" required/>
            <input type="submit" value="Carica Prodotto"/>
-           <label for="categorie"> </label>
-           <input type=""
         </form>
+        
+        </div>
+        
+        <footer id="footer">
+                <h3>Informazioni</h3>
+                <p>Per qualsiasi informazione contattare la nostra pagina facebook o scrivete a 
+                   <strong>nerd-help@gmail.com</strong>.
+                </p>
+       
+                <div class="social">
+                    <ul> 
+                        <li id="facebook"><a href="https://www.facebook.com/">facebook</a></li>  
+                        <li id="twitter"><a href="https://twitter.com/?lang=it">twitter</a></li>  
+                        <li id="linkedin"><a href="https://it.linkedin.com/">linkedin</a></li> 
+                    </ul>
+                </div>
+                 <div id="valida">
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="http://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="CSS Valido!" />
+                    </a>
+                </div>
+            </footer>
     </body>
 </html>
