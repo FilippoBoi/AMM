@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Macinino
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login.html"})
+@WebServlet(name = "Login", urlPatterns = {"/Login.htlm"})
 public class Login extends HttpServlet {
 
       /* Costanti necessarie per generare la stringa di connessione */

@@ -26,7 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Macinino
  */
-@WebServlet(name = "Cliente", urlPatterns = {"/Cliente.html"})
+@WebServlet(name = "Cliente", urlPatterns = {"/Cliente.htlm"})
 public class Acquirente extends HttpServlet {
 
     /**

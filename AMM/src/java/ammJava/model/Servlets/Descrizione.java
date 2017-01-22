@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Filippo Boi
  */
 /** Servlet che risponde alla url descrizione.html */
-@WebServlet(name = "Descrizione", urlPatterns = {"/descrizione.html"})
+@WebServlet(name = "Descrizione", urlPatterns = {"/descrizione.htlm"})
 public class Descrizione extends HttpServlet {
 
     /**
