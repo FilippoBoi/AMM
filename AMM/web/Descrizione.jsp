@@ -20,14 +20,16 @@
     <body>
            <c:if test="${sessionScope.utente != null}">
             <div id="logout"><a href="logout.html">Logout</a></div>
-        
+          
         </c:if>
         <nav>
-            <a href="descrizione.html">Descrizione</a> 
-            <a href="login.html">Login</a> 
-            <a href="cliente.html">Cliente</a>
+              <ul>
+                 <li><a href="Login.jsp">Login</a> </li>
+                <li><a href="Cliente.jsp">Cliente</a></li>
+                 <li> <a href="Venditore.jsp">Il mio negozio</a></li>
+              </ul>
         </nav>
-        
+
         <div>
 		<ul>
             <li><a href="#contenuti">Contenuti</a></li>
