@@ -69,7 +69,7 @@
                             <td> ${oggetto.prezzoUnita}</td>
                             <td> ${oggetto.descrizione}</td>
                             <td> ${oggetto.quantita}</td>
-                            <td><a  href="cliente.html?idAuto=${oggetto.ID}">
+                            <td><a  href="cliente.html?idOggetto=${oggetto.ID}">
                                     <img src="Images/aggiungi.png" width="40" height="40"  alt="Aggiungi"/></a>
                             </td>
                             

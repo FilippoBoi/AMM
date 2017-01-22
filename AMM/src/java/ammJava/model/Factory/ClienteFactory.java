@@ -159,7 +159,7 @@ public class ClienteFactory {
     }  
     
     /** Questo metodo gestiscee la compravendita di un oggetto tramite una transazione. 
-     *  @param  idCar id dell'auto che il cliente desidera comprare
+     *  @param  idCar id dell'oggetto che il cliente desidera comprare
      *  @param  idAccountAcquirente id del cliente
      *  @param  idAccountVenditore id del venditore
      *  @return  restiuisce true se la transazione è andata a buon fine, altrimenti restituisce false

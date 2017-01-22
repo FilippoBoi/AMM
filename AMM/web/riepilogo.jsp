@@ -49,14 +49,14 @@
 
                                 <c:choose>
                                     <c:when test="${utente == 'venditore'}" >
-                                        ${auto.quantita} 
+                                        ${oggetti.quantita} 
                                     </c:when>
                                     <c:otherwise>
                                         1
                                     </c:otherwise>
                                 </c:choose>
                             </td>
-                            <td> ${auto.prezzoUnita} </td>
+                            <td> ${oggetti.prezzoUnita} </td>
                         </tr>
                 </table>
                 
