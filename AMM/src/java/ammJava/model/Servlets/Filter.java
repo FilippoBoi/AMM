@@ -4,9 +4,12 @@
  * and open the template in the editor.
  */
 
-package amm_java_files;
+package ammJava.model.Servlets;
 
-import amm_java_files.Factories.OggettiFactory;
+import ammJava.model.Cliente;
+import ammJava.model.Factory.OggettiFactory;
+import ammJava.model.Oggetti;
+import ammJava.model.Persona;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -21,8 +24,8 @@ import javax.servlet.http.HttpSession;
  * @author Filippo Boi
  */
 
-@WebServlet(name = "FilterServlet", urlPatterns = {"/filter.json"})
-public class FilterServlet extends HttpServlet {
+@WebServlet(name = "Filter", urlPatterns = {"/filter.json"})
+public class Filter extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,13 +43,13 @@ public class FilterServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         
         if(session == null){
-           request.setAttribute("utente", "Cliente");
+           request.setAttribute("utente", "cliente");
 
            request.getRequestDispatcher("accessoNegato.jsp").forward(request, response);
         }
         
             if(((Persona)session.getAttribute("utente") instanceof Cliente) || session.getAttribute("utente") == null){
-            request.setAttribute("utente", "Cliente");
+            request.setAttribute("utente", "cliente");
             request.getRequestDispatcher("accessoNegato.jsp").forward(request, response);
         }
         

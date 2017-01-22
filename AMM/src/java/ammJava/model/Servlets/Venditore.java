@@ -3,28 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files;
+package ammJava.model.Servlets;
 
-import amm_java_files.Factories.OggettiFactory;
+import ammJava.model.Cliente;
+import ammJava.model.Factory.OggettiFactory;
+import ammJava.model.Oggetti;
+import ammJava.model.Persona;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
+
 /**
  *
- * @author Filippo Boi
+ * @author Macinino
  */
+@WebServlet(name = "Venditore", urlPatterns = {"/Venditore"})
+public class Venditore extends HttpServlet {
 
-
-/* Servet che risponde alla url venditore.html */
-@WebServlet(name = "VenditoreServlet", urlPatterns = {"/venditore.html"})
-public class VenditoreServlet extends HttpServlet {
-
-    /**
+ /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -301,7 +303,6 @@ public class VenditoreServlet extends HttpServlet {
             request.getRequestDispatcher("venditore.jsp").forward(request, response);
         
 }
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

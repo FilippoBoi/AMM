@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files.Factories;
+package ammJava.model.Factory;
 
 /**
  *
  * @author Filippo Boi
  */
-import amm_java_files.Venditore;
+import ammJava.model.Venditore;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

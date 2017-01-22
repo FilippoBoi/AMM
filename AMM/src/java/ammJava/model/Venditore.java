@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files;
-import amm_java_files.Factories.OggettiFactory;
+package ammJava.model;
+
+import ammJava.model.Factory.OggettiFactory;
 import java.util.ArrayList;
 
 /**

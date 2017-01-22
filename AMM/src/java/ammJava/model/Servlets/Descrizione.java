@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files;
-
-
+package ammJava.model.Servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,15 +11,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Filippo Boi
  */
-/** Servlet che risponde ad una richoesta di logout da parte dell'utente */
-@WebServlet(name = "Logout", urlPatterns = {"/logout.html"})
-public class LogoutServlet extends HttpServlet {
+/** Servlet che risponde alla url descrizione.html */
+@WebServlet(name = "Descrizione", urlPatterns = {"/descrizione.html"})
+public class Descrizione extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,15 +33,7 @@ public class LogoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        HttpSession session = request.getSession(false);
-        
-        // Se la sessione esiste questa viene invalidata
-        if(session!=null){
-           session.setAttribute("utente", null);
-           session.invalidate();
-        }
-        // Dopo aver invalidato la sessione rimando l'utente alla pagina di benvenuto
-        response.sendRedirect("descrizione.html");
+        request.getRequestDispatcher("descrizione.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

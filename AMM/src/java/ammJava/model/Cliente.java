@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files;
+package ammJava.model;
+
+
 
 /**
  *
  * @author Filippo Boi
  */
-
 public class Cliente extends Persona {
 
     public Cliente(int id, String nome, String password, String mail, String cognome, String username, String indirizzo, int idConto){
@@ -21,4 +22,3 @@ public class Cliente extends Persona {
 
 
 }
-

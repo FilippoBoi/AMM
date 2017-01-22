@@ -12,8 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="author" content="Filippo Boi">
-        <meta name="description" content="pagina del cliente, carrello">
-        <meta name="keywords" content="Cliente, Articoli, Carrello">
+        <meta name="description" content="pagina del cliente">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css" type="text/css">
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
@@ -24,19 +23,18 @@
     <body>
             <header>
 
-              <c:if test="${sessionScope.utente != null}">
-                  <div id="logout"><a href="logout.html">Logout</a></div>
-              </c:if>
-
-              
-                <nav>
-                    <ul>
-                        <li> <a href="login.html">Login</a> </li>
-                        <li> <a href="descrizione.html">Descrizione</a> </li>
-                        <li class="currentpage"> <a href="">${utente}</a></li>
-                    </ul>
-                </nav>
-
+           <c:if test="${sessionScope.utente != null}">
+            <div id="logout"><a href="logout.html">Logout</a></div>
+        
+        </c:if>
+        <nav>
+            <ul>
+                <li> <a href="descrizione.html"> info </a></li>
+                <li> <a href="cliente.html">Il mio profilo</a></li>
+                <li> <a href="venditore.html">Il mio negozio</a></li>
+            </ul>
+        </nav>
+        
             </header>
             
             <div id="sidebar1">
@@ -48,7 +46,7 @@
                 <h1>Accesso negato</h1>
                 <p id="divieto">Non hai i permessi necessari per accedere a questa pagina</p>
 
-                
+                    <jsp:include page="footer.jsp" />
             </div>
     </body>
 </html>

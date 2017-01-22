@@ -4,6 +4,7 @@
     Author     : Filippo Boi
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -80,6 +81,6 @@
                 <c:if test="${size == 0}">
                     <p class="errore">Non ci sono oggetti in vendita ! Siamo dispiaciuti.</p>
                 </c:if>
-                
+                    <jsp:include page="footer.jsp" />
     </body>
 </html>

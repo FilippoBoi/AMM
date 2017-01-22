@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files;
+package ammJava.model.Servlets;
 
-import amm_java_files.Factories.AccountsFactory;
-import amm_java_files.Factories.ClienteFactory;
-import amm_java_files.Factories.VenditoriFactory;
-import amm_java_files.Factories.OggettiFactory;
+import ammJava.model.Cliente;
+import ammJava.model.Factory.AccountsFactory;
+import ammJava.model.Factory.ClienteFactory;
+import ammJava.model.Factory.OggettiFactory;
+import ammJava.model.Factory.VenditoriFactory;
+import ammJava.model.Oggetti;
+import ammJava.model.Persona;
+import ammJava.model.Venditore;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -22,12 +26,12 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Filippo Boi
+ * @author Macinino
  */
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
+public class Login extends HttpServlet {
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/login.html"}, loadOnStartup = 0)
-public class LoginServlet extends HttpServlet {
-    /* Costanti necessarie per generare la stringa di connessione */
+      /* Costanti necessarie per generare la stringa di connessione */
     private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
     private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
     private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
@@ -40,7 +44,7 @@ public class LoginServlet extends HttpServlet {
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         OggettiFactory.getInstance().setConnectionString(dbConnection);
@@ -180,5 +184,5 @@ public class LoginServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }

@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files;
+package ammJava.model;
 
 /**
  *
- * @author Macinino
+ * @author Filippo Boi
+ * 
  */
 public class Persona {
     

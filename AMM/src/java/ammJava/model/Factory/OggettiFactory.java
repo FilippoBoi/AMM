@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package amm_java_files.Factories;
+package ammJava.model.Factory;
 
-import amm_java_files.Oggetti;
+import ammJava.model.Oggetti;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
