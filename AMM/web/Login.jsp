@@ -26,23 +26,23 @@
         </c:if>
         <nav>
             <ul>
-                <li> <a href="descrizione.html"> info </a></li>
-                <li> <a href="cliente.html">Il mio profilo</a></li>
-                <li> <a href="venditore.html">Il mio negozio</a></li>
+                <li> <a href="Descrizione.jsp"> info </a></li>
+                <li> <a href="Cliente.jsp">Il mio profilo</a></li>
+                <li> <a href="Venditore.jsp">Il mio negozio</a></li>
             </ul>
         </nav>
         
         <div>
             Inserisci le tue credenziali:<hr>
-        <form action="segnaposto.asp" method="post">
+        <form action="Login.html" method="post">
             <label for="username">username:</label>
         <input type="text" name="username"
                id="username" placeholder="nome utente" required/>
         <br/>
         <label for="pswd">password:</label>
-        <input type="password" name="password"
-               id="pswd" placeholder="inserisci password" required/>
-        <input type="submit" value="Log in"/>
+        <input type="password" 
+               name="pswd" placeholder="inserisci password" required/>
+        <input type="submit" value="Log in" name="submit"/>
         </form>
             </div>
       

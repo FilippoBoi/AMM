@@ -53,7 +53,7 @@ public class VenditoriFactory {
     public ArrayList<Venditore> getListaVenditori() {
         ArrayList<Venditore> listaVenditori = new ArrayList<>();
         
-            try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+            try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             Statement stmt = conn.createStatement()) {
                  String sql = "SELECT * FROM Venditore";
            
@@ -86,7 +86,7 @@ public class VenditoriFactory {
     public Venditore getVenditoreById(int id){
           String query = "select * from Venditore where id = ?";
         
-            try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+            try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(query)){
             // Si associano valori e posizioni di placeholder
             stmt.setInt(1, id);
@@ -122,7 +122,7 @@ public class VenditoriFactory {
         // Definisco la query per trovare un venditore dati username e password
         String query = "select * from Venditore where password = ? and username = ?";
         
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(query)){
             
             stmt.setString(1, password);

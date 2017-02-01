@@ -59,7 +59,7 @@ public class ClienteFactory {
         ArrayList<Cliente> listaClienti = new ArrayList<>();
         
 
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             Statement stmt = conn.createStatement()) {
             
             String sql = "SELECT * FROM Acquirente";
@@ -98,7 +98,7 @@ public class ClienteFactory {
         String query = "SELECT * FROM Acquirente WHERE id = ?";
      
         
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(query)){
             // Si associano valori e posizioni di placeholder
             stmt.setInt(1, id);
@@ -130,10 +130,10 @@ public class ClienteFactory {
     public Cliente findAcquirente(String username, String password){
         Cliente buyer = null;
       
-        String query = "select * from Acquirente where password = ? and username = ?";
+        String query = "SELECT * FROM ACQUIRENTE WHERE PASSWORD = ? AND USERNAME = ?";
         
 
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(query)){
         
             stmt.setString(1, password);
@@ -197,7 +197,7 @@ public class ClienteFactory {
         String query3 = " UPDATE Account SET saldo = ?  WHERE id = ? ";
         
         try{ 
-            conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+            conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
 
             conn.setAutoCommit(false);
             

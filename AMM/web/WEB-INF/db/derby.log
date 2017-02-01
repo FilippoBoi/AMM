@@ -1,8 +1,8 @@
-Sat Jan 21 14:03:09 CET 2017 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
+Thu Feb 02 00:19:02 CET 2017 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
 ----------------------------------------------------------------
-Sat Jan 21 14:03:09 CET 2017:
-Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-0159-c11f-93bb-0000125f8528
-sulla directory di database C:\Users\Macinino\Documents\NetBeansProjects\AMM\AMM_2\web\WEB-INF\db\ammdb con caricatore classi sun.misc.Launcher$AppClassLoader@5e2de80c 
+Thu Feb 02 00:19:03 CET 2017:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-0159-fbf9-650d-00005bf2d27b
+sulla directory di database C:\Users\Macinino\Documents\NetBeansProjects\AMM\AMM\web\WEB-INF\db\ammdb con caricatore classi sun.misc.Launcher$AppClassLoader@5e2de80c 
 Caricato da file:/C:/Program%20Files/Java/jdk1.8.0_73/db/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_73-b02
@@ -10,12 +10,5 @@ user.dir=C:\Program Files\Java\jdk1.8.0_73\db
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
-derby.system.home=C:\Users\Macinino\Documents\NetBeansProjects\AMM\AMM_2\web\WEB-INF\db
+derby.system.home=C:\Users\Macinino\Documents\NetBeansProjects\AMM\AMM\web\WEB-INF\db
 Programma di caricamento classe database avviato - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Jan 21 14:03:21 CET 2017:
-Arresto dell'istanza a816c00e-0159-c11f-93bb-0000125f8528 nella directory del database C:\Users\Macinino\Documents\NetBeansProjects\AMM\AMM_2\web\WEB-INF\db\ammdb con il caricatore di classi sun.misc.Launcher$AppClassLoader@5e2de80c 
-Sat Jan 21 14:03:21 CET 2017 Thread[DRDAConnThread_3,5,main] (DATABASE = ammdb), (DRDAID = {2}), Chiusura del database 'ammdb'.
-----------------------------------------------------------------
-Sat Jan 21 14:40:09 CET 2017: arresto in corso del motore di Derby
-----------------------------------------------------------------

@@ -44,7 +44,7 @@ public class OggettiFactory {
     public ArrayList<Oggetti> getListaOggetti()
     {
         ArrayList<Oggetti> listaOggetti = new ArrayList<>();
-        try(Connection conn = DriverManager.getConnection(connectionString,"filippoboi","paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString,"filippoBoi","paperino");
             Statement stmt = conn.createStatement()) {
             // Definisco la query per ottenere l'elenco di tutti gli oggetti in vendita
             String sql = "SELECT * FROM Oggetti";
@@ -74,7 +74,7 @@ public class OggettiFactory {
         {
             Oggetti oggetto = null;
             String sql ="SELECT * FROM Oggetti WHERE ID =?";
-            try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+            try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(sql)) {
             // Si associano valori e posizioni di placeholder
             stmt.setInt(1, id);
@@ -108,7 +108,7 @@ public class OggettiFactory {
             String sql = "SELECT * FROM CarSale WHERE idVenditore = ?";
             
 
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
                 PreparedStatement stmt = conn.prepareStatement(sql)) {
                 stmt.setInt(1, idVenditore);
                
@@ -138,7 +138,7 @@ public class OggettiFactory {
         boolean eliminato = false;
         String sql = "DELETE FROM Oggetti WHERE id = ?";
        
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, idOggetto);
             
@@ -184,7 +184,7 @@ public class OggettiFactory {
                     + "SET idVenditore =?, nomeOggetto=?, descrizione=?, categoria=?, quantita=?, prezzoUnita=?, indirizzoImg=?"
                     + "WHERE id = ? ";
         
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, oggetto.getIdVenditore());
             stmt.setString(2, oggetto.getNomeOggetto());
@@ -212,7 +212,7 @@ public class OggettiFactory {
                      "FROM Oggetti " + 
                      "WHERE nomeOggetto LIKE ? OR descrizione LIKE ?";         
         
-        try(Connection conn = DriverManager.getConnection(connectionString, "filippoboi", "paperino");
+        try(Connection conn = DriverManager.getConnection(connectionString, "filippoBoi", "paperino");
             PreparedStatement stmt = conn.prepareStatement(sql)) {
             // Assegna dat.000i
             pattern = "%"+pattern+"%";

@@ -3,10 +3,9 @@
     Created on : 20-gen-2016, 17.27.23
     Author     : Filippo Boi
 --%>
-
-<%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <json:array>
     <c:forEach var="oggetti" items="${Oggetti}">
         <json:object>

@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Macinino
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
+@WebServlet(name = "Login", urlPatterns = {"/Login.html"})
 public class Login extends HttpServlet {
 
       /* Costanti necessarie per generare la stringa di connessione */
@@ -120,7 +120,7 @@ public class Login extends HttpServlet {
                 }
             }
             // Richiamo la jsp per il login
-            request.getRequestDispatcher("login.jsp").forward(request, response);    
+            request.getRequestDispatcher("Login.jsp").forward(request, response);    
         }
  
         else{

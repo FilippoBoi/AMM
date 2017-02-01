@@ -21,13 +21,13 @@
     </head>
     <body>
         <c:if test="${sessionScope.utente != null}">
-            <div id="logout"><a href="logout.html">Logout</a></div>
+            <div id="logout"><a href="Logout.html">Logout</a></div>
         
         </c:if>
         <nav>
-            <a href="descrizione.html">Descrizione</a> 
-            <a href="login.html">Login</a> 
-            <a href="cliente.html">Cliente</a>
+            <a href="Descrizione.jsp">Descrizione</a> 
+            <a href="Login.jsp">Login</a> 
+            <a href="Cliente.jsp">Cliente</a>
         </nav>
             <br><br>
             <div>
@@ -64,7 +64,7 @@
                    
                     <c:forEach  items="${Oggetti}" var="oggetto" >
                         <tr> 
-                            <td><img title='${oggetto.nomeOggetto}' alt="Foto dell'oggetto ${oggetto.NOMEOGGETTO}" src='${oggetto.indirizzoImg}'/></td> 
+                            <td><img title='${oggetto.nomeOggetto}' alt="Foto dell'oggetto ${oggetto.nomeOggetto}" src='${oggetto.indirizzoImg}'/></td> 
                             <td> ${oggetto.nomeOggetto} </td> 
                             <td> ${oggetto.prezzoUnita}</td>
                             <td> ${oggetto.descrizione}</td>
