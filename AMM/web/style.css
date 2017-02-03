@@ -112,7 +112,7 @@ input#submit
 div .formCenter
 {
    text-align: left;
-   position: absolute;
+   position: relative;
    left:45%;
 }
 
@@ -193,9 +193,9 @@ div.col2
     position: relative;
     padding-bottom: 100px;
 }
-footer
+ #footer
 {
-    height: 100px;
+    height: 100%;
     width: 99%;
     position: absolute;
     bottom: 1%;
