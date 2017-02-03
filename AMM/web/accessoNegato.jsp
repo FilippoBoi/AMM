@@ -29,9 +29,9 @@
         </c:if>
         <nav>
             <ul>
-                <li> <a href="Descrizione.jsp"> info </a></li>
-                <li> <a href="Cliente.jsp">Il mio profilo</a></li>
-                <li> <a href="Venditore.jsp">Il mio negozio</a></li>
+                <li> <a href="descrizione.html"> info </a></li>
+                <li> <a href="cliente.html">Il mio profilo</a></li>
+                <li> <a href="venditore.html">Il mio negozio</a></li>
             </ul>
         </nav>
         
