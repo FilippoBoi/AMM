@@ -100,7 +100,7 @@ public class VenditoriFactory {
                 seller.setCognome(set.getString("cognome"));
                 seller.setUsername(set.getString("username"));
                 seller.setPassword(set.getString("password"));
-                seller.setIdConto(set.getInt("id_conto"));
+                seller.setIdConto(set.getInt("idConto"));
                 
                 return seller; 
             }
@@ -137,7 +137,7 @@ public class VenditoriFactory {
                 seller.setCognome(set.getString("cognome"));
                 seller.setUsername(set.getString("username"));
                 seller.setPassword(set.getString("password"));
-                seller.setIdConto(set.getInt("id_conto"));
+                seller.setIdConto(set.getInt("idConto"));
             }
         } catch(SQLException ex){
             Logger.getLogger(VenditoriFactory.class.getName()).

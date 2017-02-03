@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Macinino
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login.htlm"})
+@WebServlet(name = "Login", urlPatterns = {"/Login.html"})
 public class Login extends HttpServlet {
 
       /* Costanti necessarie per generare la stringa di connessione */
@@ -88,9 +88,9 @@ public class Login extends HttpServlet {
                         int size = listaOggetti.size();
                         request.setAttribute("listaOggetti", listaOggetti);
                         request.setAttribute("size", size);
-                        request.getRequestDispatcher("cliente.jsp").forward(request, response);
-                    }
-                    
+                        request.getRequestDispatcher("Cliente.jsp").forward(request, response);
+                    }else
+                    {
               
                     Venditore venditore = VenditoriFactory.getInstance().findVenditore(username, password);
                     if(venditore != null){
@@ -105,22 +105,19 @@ public class Login extends HttpServlet {
                             request.setAttribute("listaSize", listaOggetti.size());
                         else
                             request.setAttribute("listaSize", 0);  
-                        request.getRequestDispatcher("venditore.jsp").forward(request, response);
+                        request.getRequestDispatcher("Venditore.jsp").forward(request, response);
                     }
                     
                  
                     request.setAttribute("errore", true);
-                    request.getRequestDispatcher("login.jsp").forward(request, response);   
-                    
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);   
+                }
                 }
             
-                else{
-                    request.setAttribute("errore", true);
-                    request.getRequestDispatcher("login.jsp").forward(request, response);   
-                }
+               
             }
             // Richiamo la jsp per il login
-            request.getRequestDispatcher("Login.jsp").forward(request, response);    
+            //request.getRequestDispatcher("Login.jsp").forward(request, response);    
         }
  
         else{
@@ -132,7 +129,7 @@ public class Login extends HttpServlet {
                             request.setAttribute("listaSize", listaOggetti.size());
                         else
                             request.setAttribute("listaSize", 0); 
-                    request.getRequestDispatcher("venditore.jsp").forward(request, response);
+                    request.getRequestDispatcher("Venditore.jsp").forward(request, response);
                 }
      
                 else{
@@ -140,7 +137,7 @@ public class Login extends HttpServlet {
                     int size = listaOggetti.size();
                     request.setAttribute("listaOggetti", listaOggetti);
                     request.setAttribute("size", size);
-                    request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
 
         }

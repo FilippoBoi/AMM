@@ -22,9 +22,9 @@
         
         </c:if>
         <nav>
-            <a href="descrizione.html">Descrizione</a> 
+            <a href="Descrizione.jsp">Descrizione</a> 
             <a href="login.html">Login</a> 
-            <a href="cliente.html">Cliente</a>
+            <a href="Cliente.jsp">Cliente</a>
         </nav>
             
                  <label>

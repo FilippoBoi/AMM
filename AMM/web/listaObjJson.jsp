@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <json:array>
-    <c:forEach var="oggetti" items="${Oggetti}">
+    <c:forEach var="oggetti" items="${listaOggetti}">
         <json:object>
             <json:property name="nomeOggetto" value="${oggetto.nomeOggetto}"/>
             <json:property name="IndirizzoImg" value="${oggetto.IndirizzoImg}"/>

@@ -112,7 +112,7 @@ public class ClienteFactory {
                 buyer.setCognome(set.getString("cognome"));
                 buyer.setUsername(set.getString("username"));
                 buyer.setPassword(set.getString("password"));
-                buyer.setIdConto(set.getInt("id_conto"));
+                buyer.setIdConto(set.getInt("idConto"));
             }
         } catch(SQLException ex){
             Logger.getLogger(ClienteFactory.class.getName()).
@@ -148,7 +148,7 @@ public class ClienteFactory {
                 buyer.setCognome(set.getString("cognome"));
                 buyer.setUsername(set.getString("username"));
                 buyer.setPassword(set.getString("password"));
-                buyer.setIdConto(set.getInt("id_conto"));
+                buyer.setIdConto(set.getInt("idConto"));
             }
         } catch(SQLException e) {
             Logger.getLogger(ClienteFactory.class.getName()).

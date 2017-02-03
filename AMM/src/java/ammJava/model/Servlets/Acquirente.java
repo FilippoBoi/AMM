@@ -26,7 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Macinino
  */
-@WebServlet(name = "Cliente", urlPatterns = {"/Cliente.htlm"})
+@WebServlet(name = "Cliente", urlPatterns = {"/Cliente.html"})
 public class Acquirente extends HttpServlet {
 
     /**
@@ -51,6 +51,11 @@ public class Acquirente extends HttpServlet {
             request.setAttribute("utente","Cliente");
             request.getRequestDispatcher("accessoNegato.jsp").forward(request, response);
         }
+        else
+        {
+             request.setAttribute("listaOggetti", OggettiFactory.getInstance().getListaOggetti());   
+            
+        }
          
         if( ((Persona)session.getAttribute("utente") instanceof Venditore )|| session.getAttribute("utente")==null)
         {
@@ -73,7 +78,7 @@ public class Acquirente extends HttpServlet {
                     request.setAttribute("errore", true); 
                     listaOggetti = OggettiFactory.getInstance().getListaOggetti();
                     request.setAttribute("listaOggetti", listaOggetti);
-                    request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
                 
                 Oggetti oggettoSelezionato = OggettiFactory.getInstance().getObjSellByID(id);
@@ -84,7 +89,7 @@ public class Acquirente extends HttpServlet {
                     request.setAttribute("errore", true); 
                     listaOggetti = OggettiFactory.getInstance().getListaOggetti();
                     request.setAttribute("listaOggetti", listaOggetti);
-                    request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
                 
                 int idVenditore = oggettoSelezionato.getIdVenditore();
@@ -116,7 +121,7 @@ public class Acquirente extends HttpServlet {
                 request.setAttribute("conferma",true);
                 listaOggetti= OggettiFactory.getInstance().getListaOggetti();
                 request.setAttribute("listaOggetti", listaOggetti);
-                request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                request.getRequestDispatcher("Cliente.jsp").forward(request, response);
             }
             if(request.getParameter("idOggetto")!=null)
             {
@@ -130,7 +135,7 @@ public class Acquirente extends HttpServlet {
                     request.setAttribute("errore", true);
                     listaOggetti = OggettiFactory.getInstance().getListaOggetti();
                     request.setAttribute("listaOggetti", listaOggetti);
-                    request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
                 
                 Oggetti oggettoSelezionato = OggettiFactory.getInstance().getObjSellByID(idOggettoSelez);
@@ -145,7 +150,7 @@ public class Acquirente extends HttpServlet {
                 else{
                     listaOggetti = OggettiFactory.getInstance().getListaOggetti(); 
                     request.setAttribute("listaOggetti", listaOggetti);
-                    request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
             }
             

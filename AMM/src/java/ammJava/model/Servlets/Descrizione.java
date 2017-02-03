@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Filippo Boi
  */
 /** Servlet che risponde alla url descrizione.html */
-@WebServlet(name = "Descrizione", urlPatterns = {"/descrizione.htlm"})
+@WebServlet(name = "Descrizione", urlPatterns = {"/descrizione.html"})
 public class Descrizione extends HttpServlet {
 
     /**
@@ -33,7 +33,7 @@ public class Descrizione extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        request.getRequestDispatcher("descrizione.jsp").forward(request, response);
+        request.getRequestDispatcher("Descrizione.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

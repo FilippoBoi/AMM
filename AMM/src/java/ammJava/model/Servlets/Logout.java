@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
  * @author Filippo Boi
  */
 /** Servlet che risponde ad una richoesta di logout da parte dell'utente */
-@WebServlet(name = "Logout", urlPatterns = {"/logout.htlm"})
+@WebServlet(name = "Logout", urlPatterns = {"/logout.html"})
 public class Logout extends HttpServlet {
 
     /**
@@ -44,7 +44,7 @@ public class Logout extends HttpServlet {
            session.invalidate();
         }
         // Dopo aver invalidato la sessione rimando l'utente alla pagina di benvenuto
-        response.sendRedirect("descrizione.html");
+        response.sendRedirect("Descrizione.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

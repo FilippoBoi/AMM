@@ -47,12 +47,12 @@
             </div>
       
                       
-                <div id="o">
+            
 
                     <c:if test="${errore == true}">
-                       <p class="errore"> Login erratto, riprova!</p>
+                       <p class="errore"> Login errato, riprova!</p>
                     </c:if>
-                </div>
+                
                     <jsp:include page="footer.jsp" />
     </body>
 </html>

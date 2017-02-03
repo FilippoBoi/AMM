@@ -21,7 +21,7 @@
     </head>
     <body>
         <c:if test="${sessionScope.utente != null}">
-            <div id="logout"><a href="Logout.html">Logout</a></div>
+            <div id="logout"><a href="logout.html">Logout</a></div>
         
         </c:if>
         <nav>
@@ -50,7 +50,7 @@
             <div>
                 
                            <label for="filtra">Filtra</label>
-                <input type="text" name="filtra" id="filtra" value="" />
+                <input type="text" name="filtra" value="" />
        
            <table style='width:100%' >
                 <tr> 
@@ -62,7 +62,7 @@
                     <th>Aggiungi al carrello</th>
                 </tr>
                    
-                    <c:forEach  items="${Oggetti}" var="oggetto" >
+                    <c:forEach   var="oggetto" items="${listaOggetti}">
                         <tr> 
                             <td><img title='${oggetto.nomeOggetto}' alt="Foto dell'oggetto ${oggetto.nomeOggetto}" src='${oggetto.indirizzoImg}'/></td> 
                             <td> ${oggetto.nomeOggetto} </td> 
@@ -78,9 +78,6 @@
                 </table>
                 </div> 
                         
-                <c:if test="${size == 0}">
-                    <p class="errore">Non ci sono oggetti in vendita ! Siamo dispiaciuti.</p>
-                </c:if>
                     <jsp:include page="footer.jsp" />
     </body>
 </html>
