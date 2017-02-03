@@ -17,42 +17,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css" type="text/css">
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-        <script type="text/javascript" src="js/filter.js"></script>
+        <script type="text/javascript" src="js/Filter.js"></script>
+
+</script>
+
     </head>
-    <body>
-        <c:if test="${sessionScope.utente != null}">
-            <div id="logout"><a href="logout.html">Logout</a></div>
-        
-        </c:if>
-        <nav>
-            <a href="Descrizione.jsp">Descrizione</a> 
-            <a href="Login.jsp">Login</a> 
-            <a href="Cliente.jsp">Cliente</a>
-        </nav>
-            <br><br>
-            <div>
-                <c:if test="${conferma==true}">
-                    <c:choose>
-                        <c:when test="${pagamento == true}" >
-                            <p class="ok"> Pagamento avvenuto con successo! </p>
-                        </c:when>
-                        <c:otherwise>
-                            <p class="errore"> Il tuo saldo non è sufficiente, riprova in un secondo momento! </p>
-                        </c:otherwise>
-                    </c:choose>
-                </c:if>
-                         
-                     
-                <c:if test="${errore == true}" >
-                    <p class="errore"> Si è verificato un errore nel pagamento, riprova! </p>
-                </c:if>
-                    </div>
-            <div>
-                
-                           <label for="filtra">Filtra</label>
-                <input type="text" name="filtra" value="" />
+    <body >
        
-           <table style='width:100%' >
+         <nav><hr>
+            <ul>
+        <c:if test="${sessionScope.utente != null}">
+            
+            <li><a href="logout.html">Logout</a></li>
+        </c:if>
+        <c:if test="${sessionScope.utente==null}">
+            <a href="Login.jsp">Login</a>
+        </c:if>    
+       
+                <li> <a href="Descrizione.jsp">Descrizione</a> </li>
+                <li>  <a href="Cliente.jsp">Cliente</a></li>
+            </ul>
+        </nav><hr>
+
+        <div style="height:auto">
+            <c:if test="${conferma==true}">
+                <c:choose>
+                    <c:when test="${pagamento == true}" >
+                        <p class="ok"> Pagamento avvenuto con successo! </p>
+                    </c:when>
+                    <c:otherwise>
+                        <p class="errore"> Il tuo saldo non è sufficiente, riprova in un secondo momento! </p>
+                    </c:otherwise>
+                </c:choose>
+            </c:if>
+
+
+            <c:if test="${errore == true}" >
+                <p class="errore"> Si è verificato un errore nel pagamento, riprova! </p>
+            </c:if>
+        </div>
+        <div>
+
+            <label for="filtra">Filtra</label>
+            <input type="text" name="filtra" value="" />
+
+            <table style='width:100%' >
                 <tr> 
                     <th>Immagine</th>
                     <th>Nome Articolo</th>
@@ -61,23 +70,27 @@
                     <th>Numero Pezzi</th>
                     <th>Aggiungi al carrello</th>
                 </tr>
-                   
-                    <c:forEach   var="oggetto" items="${listaOggetti}">
-                        <tr> 
-                            <td><img title='${oggetto.nomeOggetto}' alt="Foto dell'oggetto ${oggetto.nomeOggetto}" src='${oggetto.indirizzoImg}'/></td> 
-                            <td> ${oggetto.nomeOggetto} </td> 
-                            <td> ${oggetto.prezzoUnita}</td>
-                            <td> ${oggetto.descrizione}</td>
-                            <td> ${oggetto.quantita}</td>
-                            <td><a  href="cliente.html?idOggetto=${oggetto.ID}">
-                                    <img src="Images/aggiungi.png" width="40" height="40"  alt="Aggiungi"/></a>
-                            </td>
-                            
-                        </tr>
-                    </c:forEach>
-                </table>
-                </div> 
-                        
-                    <jsp:include page="footer.jsp" />
+
+                <c:forEach var="oggetto" items="${listaOggetti}">
+                    <tr> 
+                        <td><img title='${oggetto.nomeOggetto}' alt="Foto dell'oggetto ${oggetto.nomeOggetto}" src='${oggetto.indirizzoImg}' width='100' height='100'/></td> 
+                        <td> ${oggetto.nomeOggetto} </td> 
+                        <td> ${oggetto.prezzoUnita}</td>
+                        <td> ${oggetto.descrizione}</td>
+                        <td> ${oggetto.quantita}</td>
+                        <td><a  href="cliente.html?idOggetto=${oggetto.id}">
+                                <img src="Images/aggiungi.png" width="40" height="40"  alt="Aggiungi"/></a>
+                        </td>
+
+                    </tr>
+                </c:forEach>
+            </table>
+        </div> 
+
+
+    <div id='footer'>
+    
+    <jsp:include page="footer.jsp" />
+    </div>
     </body>
 </html>

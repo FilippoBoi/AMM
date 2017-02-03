@@ -16,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css" type="text/css">
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-        <script type="text/javascript" src="js/filter.js"></script>
+        <script type="text/javascript" src="js/Filter.js"></script>
     </head>
       <title>Il mio Account</title>
     </head>
@@ -27,26 +27,27 @@
             <div id="logout"><a href="logout.html">Logout</a></div>
         
         </c:if>
-        <nav>
+        <nav><hr>
             <ul>
                 <li> <a href="Descrizione.jsp"> info </a></li>
                 <li> <a href="Cliente.jsp">Il mio profilo</a></li>
                 <li> <a href="Venditore.jsp">Il mio negozio</a></li>
             </ul>
-        </nav>
+        </nav><hr>
         
             </header>
             
-            <div id="sidebar1">
-                
-            </div>
+        
 
-            <div id="central">
+            <div >
                 
                 <h1>Accesso negato</h1>
-                <p id="divieto">Non hai i permessi necessari per accedere a questa pagina</p>
-
-                    <jsp:include page="footer.jsp" />
+                <p id="divieto">Non hai i permessi necessari per accedere a questa pagina</p>        
             </div>
+        
+    <div id='footer'>
+    
+    <jsp:include page="footer.jsp" />
+    </div>
     </body>
 </html>

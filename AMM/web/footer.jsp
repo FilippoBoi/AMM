@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
-      <h3>Informazioni</h3>
+<h3>Informazioni</h3>
                 <p>Per qualsiasi informazione contattare la nostra pagina facebook o scrivete a 
                    <strong>nerd-help@gmail.com</strong>.
                 </p>
@@ -26,3 +26,4 @@
                         alt="CSS Valido!" />
                     </a>
                 </div>
+

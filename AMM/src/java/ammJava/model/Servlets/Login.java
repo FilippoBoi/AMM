@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Macinino
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login.html"})
+@WebServlet(name = "Login", urlPatterns = {"/Login.html"}, loadOnStartup = 0)
 public class Login extends HttpServlet {
 
       /* Costanti necessarie per generare la stringa di connessione */
@@ -86,7 +86,7 @@ public class Login extends HttpServlet {
                   
                         ArrayList<Oggetti> listaOggetti = OggettiFactory.getInstance().getListaOggetti();
                         int size = listaOggetti.size();
-                        request.setAttribute("listaOggetti", listaOggetti);
+                        request.setAttribute("listaOggetti", OggettiFactory.getInstance().getListaOggetti());
                         request.setAttribute("size", size);
                         request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                     }else
