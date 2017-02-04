@@ -51,7 +51,7 @@
                             ${oggetti.quantita}
                         </c:when>
                         <c:otherwise>
-                            ${oggetti.quantita} pz.
+                            ${oggetti.quantita}
                         </c:otherwise>
                     </c:choose>
                 </td>
