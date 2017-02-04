@@ -44,7 +44,7 @@
                 <br/>
                 <br/>
                 <div><label for="descrizione">Descrizione Oggetto:</label></div>
-                <textarea rows="4" cols="30" name="descrizione" id="descrizione" value="${param["descrizione"]}"></textarea>
+                <textarea rows="4" name="descrizione" id="descrizione" value="${param["descrizione"]}"></textarea>
                 <br/>
                 <div><label for="prezzo">prezzo dell'articolo:</label></div>
                 <input type="number" name="prezzo" id="prezzo" placeholder="00,00€" value="${param["prezzo"]}" required/>
