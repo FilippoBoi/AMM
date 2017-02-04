@@ -39,128 +39,106 @@ public class Acquirente extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException 
-    {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         HttpSession session = request.getSession(false);
         ArrayList<Oggetti> listaOggetti = null;
-        
-        if(session == null)
-        { 
-            request.setAttribute("utente","Cliente");
+
+        if (session == null) {
+            request.setAttribute("utente", "Cliente");
             request.getRequestDispatcher("accessoNegato.jsp").forward(request, response);
+        } else {
+            request.setAttribute("listaOggetti", OggettiFactory.getInstance().getListaOggetti());
+            request.getRequestDispatcher("Cliente.jsp").forward(request, response);
         }
-        else
-        {
-             request.setAttribute("listaOggetti", OggettiFactory.getInstance().getListaOggetti());   
-            
-        }
-         
-        if( ((Persona)session.getAttribute("utente") instanceof Venditore )|| session.getAttribute("utente")==null)
-        {
-            request.setAttribute("utente","Cliente");
+
+        if (((Persona) session.getAttribute("utente") instanceof Venditore) || session.getAttribute("utente") == null) {
+            request.setAttribute("utente", "Cliente");
             request.getRequestDispatcher("accessoNegato.jsp").forward(request, response);
-        }
-        else
-        {
-            if(request.getParameter("conferma")!=null)
-            {
-                Cliente compratore = (Cliente)session.getAttribute("utente");
-                int id=-1;
-                
-                try
-                {
-                    id =Integer.parseInt(request.getParameter("idVenditore"));
-                }catch(RuntimeException e )
-                {
+        } else {
+            if (request.getParameter("conferma") != null) {
+                Cliente compratore = (Cliente) session.getAttribute("utente");
+                int id = -1;
+
+                try {
+                    id = Integer.parseInt(request.getParameter("idVenditore"));
+                } catch (RuntimeException e) {
                     request.setAttribute("pagamento", false);
-                    request.setAttribute("errore", true); 
-                    listaOggetti = OggettiFactory.getInstance().getListaOggetti();
-                    request.setAttribute("listaOggetti", listaOggetti);
-                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
-                }
-                
-                Oggetti oggettoSelezionato = OggettiFactory.getInstance().getObjSellByID(id);
-                
-                if (oggettoSelezionato == null)
-                {
-                    request.setAttribute("pagamento", false);
-                    request.setAttribute("errore", true); 
-                    listaOggetti = OggettiFactory.getInstance().getListaOggetti();
-                    request.setAttribute("listaOggetti", listaOggetti);
-                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
-                }
-                
-                int idVenditore = oggettoSelezionato.getIdVenditore();
-                Venditore venditore = (Venditore)VenditoriFactory.getInstance().getVenditoreById(idVenditore);
-                request.setAttribute("utente", "Cliente");
-                request.setAttribute("oggetto",oggettoSelezionato);
-                
-                int idCliente = compratore.getIdConto();
-                int idvenditore = venditore.getIdConto();
-                double prezzo = oggettoSelezionato.getPrezzoUnita();
-                
-                try
-                {
-                    if(ClienteFactory.getInstance().transazione(id, idCliente, idvenditore))
-                    {
-                        request.setAttribute("pagamento", true);
-                    }
-                    else
-                    {
-                        request.setAttribute("pagamento", false);
-                    }
-                }
-                catch(SQLException e)
-                {
-                request.setAttribute("error", true);
-                request.setAttribute("pagamento", false);
-                }
-                
-                request.setAttribute("conferma",true);
-                listaOggetti= OggettiFactory.getInstance().getListaOggetti();
-                request.setAttribute("listaOggetti", listaOggetti);
-                request.getRequestDispatcher("Cliente.jsp").forward(request, response);
-            }
-            if(request.getParameter("idOggetto")!=null)
-            {
-                int idOggettoSelez = -1;
-                
-                try 
-                {
-                    idOggettoSelez= Integer.parseInt(request.getParameter("idOggetto"));
-                }catch(RuntimeException e)
-                {
                     request.setAttribute("errore", true);
                     listaOggetti = OggettiFactory.getInstance().getListaOggetti();
                     request.setAttribute("listaOggetti", listaOggetti);
                     request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
-                
-                Oggetti oggettoSelezionato = OggettiFactory.getInstance().getObjSellByID(idOggettoSelez);
-                
-                if(oggettoSelezionato!=null)
-                {
-                    request.setAttribute("utente","cliente");
-                     session.setAttribute("oggettoSelezionato", oggettoSelezionato);
-                    request.setAttribute("oggetto", session.getAttribute("oggettoSelezionato"));
-                    request.getRequestDispatcher("riepilogo.jsp").forward(request, response);
+
+                Oggetti oggettoSelezionato = OggettiFactory.getInstance().getObjSellByID(id);
+
+                if (oggettoSelezionato == null) {
+                    request.setAttribute("pagamento", false);
+                    request.setAttribute("errore", true);
+                    listaOggetti = OggettiFactory.getInstance().getListaOggetti();
+                    request.setAttribute("listaOggetti", listaOggetti);
+                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
-                else{
-                    listaOggetti = OggettiFactory.getInstance().getListaOggetti(); 
+
+                int idVenditore = oggettoSelezionato.getIdVenditore();
+                Venditore venditore = (Venditore) VenditoriFactory.getInstance().getVenditoreById(idVenditore);
+                request.setAttribute("utente", "Cliente");
+                request.setAttribute("oggetto", oggettoSelezionato);
+
+                int idCliente = compratore.getIdConto();
+                int idvenditore = venditore.getIdConto();
+                double prezzo = oggettoSelezionato.getPrezzoUnita();
+
+                try {
+                    if (ClienteFactory.getInstance().transazione(id, idCliente, idvenditore)) {
+                        request.setAttribute("pagamento", true);
+                    } else {
+                        request.setAttribute("pagamento", false);
+                    }
+                } catch (SQLException e) {
+                    request.setAttribute("error", true);
+                    request.setAttribute("pagamento", false);
+                }
+
+                request.setAttribute("conferma", true);
+                listaOggetti = OggettiFactory.getInstance().getListaOggetti();
+                request.setAttribute("listaOggetti", listaOggetti);
+                request.getRequestDispatcher("Cliente.jsp").forward(request, response);
+            }
+            if (request.getParameter("idOggetto") != null) {
+                int idOggettoSelez = -1;
+
+                try {
+                    idOggettoSelez = Integer.parseInt(request.getParameter("idOggetto"));
+                } catch (RuntimeException e) {
+                    request.setAttribute("errore", true);
+                    listaOggetti = OggettiFactory.getInstance().getListaOggetti();
+                    request.setAttribute("listaOggetti", listaOggetti);
+                    request.getRequestDispatcher("Cliente.jsp").forward(request, response);
+                }
+
+                Oggetti oggettoSelezionato = OggettiFactory.getInstance().getObjSellByID(idOggettoSelez);
+
+                if (oggettoSelezionato != null) {
+                    request.setAttribute("utente", "cliente");
+                    session.setAttribute("oggetto", oggettoSelezionato);
+                    request.getRequestDispatcher("riepilogo.jsp").forward(request, response);
+                } else {
+                    listaOggetti = OggettiFactory.getInstance().getListaOggetti();
                     request.setAttribute("listaOggetti", listaOggetti);
                     request.getRequestDispatcher("Cliente.jsp").forward(request, response);
                 }
             }
-            
-            listaOggetti= OggettiFactory.getInstance().getListaOggetti();
-            int size= listaOggetti.size();
+
+            listaOggetti = OggettiFactory.getInstance().getListaOggetti();
+            int size = listaOggetti.size();
             request.setAttribute("listaOggetti", listaOggetti);
             request.setAttribute("size", size);
-            request.getRequestDispatcher("cliente").forward(request, response);
+            request.getRequestDispatcher("Cliente.jsp").forward(request, response);
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

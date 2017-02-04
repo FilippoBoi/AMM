@@ -24,10 +24,12 @@
                     <li><a href="logout.html">Logout</a></li>
 
                 </c:if>
-
+                <c:if test="${sessionScope.utente==null}">
+                    <li>  <a href="Login.html">Login</a></li>
+                    </c:if>   
                 <li><a href="Descrizione.jsp" >Descrizione</a> </li>
-                <li><a href="Login.jsp">Login</a> </li>
-                <li><a href="Cliente.jsp" >Cliente</a></li>
+                <li><a href="Cliente.html" >Cliente</a></li>
+                <li> <a href="riepilogo.jsp">Carrello </a></li>
             </ul>
         </nav><hr>
 
@@ -78,9 +80,9 @@
             Il sistema di rimborso sarà gestito dal cliente e dal venditore. Qualora entro 15 giorni non si sia raggiunto un accordo,
             Il rimborso verrà gestito da un responsabile terzo.</p>
     </body>
-    
-    <div id='footer'>
-    
-    <jsp:include page="footer.jsp" />
+
+    <div id="footer">
+
+        <jsp:include page="footer.jsp" />
     </div>
 </html>

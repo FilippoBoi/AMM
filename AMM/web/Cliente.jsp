@@ -10,7 +10,7 @@
 <html>
     <head>
         <title>Nerd-Help - Cliente</title>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="author" content="Filippo Boi">
         <meta name="description" content="pagina del cliente, carrello">
         <meta name="keywords" content="Cliente, Articoli, Carrello">
@@ -19,23 +19,22 @@
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
         <script type="text/javascript" src="js/Filter.js"></script>
 
-</script>
-
     </head>
     <body >
-       
-         <nav><hr>
+
+        <nav><hr>
             <ul>
-        <c:if test="${sessionScope.utente != null}">
-            
-            <li><a href="logout.html">Logout</a></li>
-        </c:if>
-        <c:if test="${sessionScope.utente==null}">
-            <a href="Login.jsp">Login</a>
-        </c:if>    
-       
+                <c:if test="${sessionScope.utente != null}">
+
+                    <li><a href="logout.html">Logout</a></li>
+                    </c:if>
+                    <c:if test="${sessionScope.utente==null}">
+                    <li>  <a href="Login.jsp">Login</a></li>
+                    </c:if>    
+
                 <li> <a href="Descrizione.jsp">Descrizione</a> </li>
-                <li>  <a href="Cliente.jsp">Cliente</a></li>
+                <li>  <a href="Cliente.html">Cliente</a></li>
+                <li> <a href="riepilogo.jsp">Carrello</a></li>
             </ul>
         </nav><hr>
 
@@ -68,18 +67,18 @@
                     <th>Prezzo</th>
                     <th>Descrizione</th>
                     <th>Numero Pezzi</th>
-                    <th>Aggiungi al carrello</th>
+                    <th>Aggiungi al <br>carrello</th>
                 </tr>
 
                 <c:forEach var="oggetto" items="${listaOggetti}">
                     <tr> 
                         <td><img title='${oggetto.nomeOggetto}' alt="Foto dell'oggetto ${oggetto.nomeOggetto}" src='${oggetto.indirizzoImg}' width='100' height='100'/></td> 
                         <td> ${oggetto.nomeOggetto} </td> 
-                        <td> ${oggetto.prezzoUnita}</td>
+                        <td> ${oggetto.prezzoUnita}€</td>
                         <td> ${oggetto.descrizione}</td>
                         <td> ${oggetto.quantita}</td>
-                        <td><a  href="cliente.html?idOggetto=${oggetto.id}">
-                                <img src="Images/aggiungi.png" width="40" height="40"  alt="Aggiungi"/></a>
+                        <td><a  href="Cliente.html?id=${oggetto.id}">
+                                <img src="Images/aggiungi.png" width="20" height="20"  alt="Aggiungi"/></a>
                         </td>
 
                     </tr>
@@ -88,9 +87,9 @@
         </div> 
 
 
-    <div id='footer'>
-    
-    <jsp:include page="footer.jsp" />
-    </div>
+        <div id='footer'>
+
+            <jsp:include page="footer.jsp" />
+        </div>
     </body>
 </html>

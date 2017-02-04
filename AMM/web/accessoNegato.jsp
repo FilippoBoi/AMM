@@ -21,21 +21,18 @@
       <title>Il mio Account</title>
     </head>
     <body>
-            <header>
+            
 
-           <c:if test="${sessionScope.utente != null}">
-            <div id="logout"><a href="logout.html">Logout</a></div>
-        
-        </c:if>
+         
         <nav><hr>
             <ul>
-                <li> <a href="Descrizione.jsp"> info </a></li>
-                <li> <a href="Cliente.jsp">Il mio profilo</a></li>
-                <li> <a href="Venditore.jsp">Il mio negozio</a></li>
+                <li> <a href="Descrizione.jsp"> Descrizione </a></li>
+                <li> <a href="Login.html">Login</a></li>
+            
             </ul>
         </nav><hr>
         
-            </header>
+            
             
         
 

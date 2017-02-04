@@ -195,11 +195,12 @@ div.col2
 }
  #footer
 {
-    height: 100%;
+   visibility:hidden;
     width: 99%;
-    position: absolute;
-    bottom: 1%;
+    position: relative;
+    top:100%;
     background-color: white;
+    height:auto;
 }
 
 header
